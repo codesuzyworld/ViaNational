@@ -1,7 +1,7 @@
 content:
   name: homepage
   label: Home Page
-  type: string
+  type: file
   path: src/_homepage
   fields:
     - { name: maintitle, label: Main Title, type: string, required: true }

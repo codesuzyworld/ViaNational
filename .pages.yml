@@ -1,10 +1,26 @@
+content:
+  name: homepage
+  label: Home Page
+  type: file
+  path: _homepage
+  fields:
+    - { name: maintitle, label: Main Title, type: string, required: true }
+    - { name: mainsubtitle, label: Main Subtitle, type: string, required: true }
+    - { name: tagline, label: Tagline, type: string, required: true }
+    - { name: aboutTitle, label: About Title, type: string, required: true }
+    - { name: aboutSubtitle, label: About Subtitle, type: string, required: true }
+    - { name: aboutDesc, label: About Description, type: string}
+    - { name: valueTitle, label: Corporate Values Title, type: string, required: true }
+    - { name: valuesubtitle, label: Corporate Values Subtitle, type: string }
+    - { name: valuesDesc, label: Corporate Values Description, type: string, required: true }
+
 media:
   input: public/assets
   output: /assets
   categories: [ "image" ]
 content:
-  - name: posts
-    label: Posts
+  - name: ourBrands
+    label: Our Brands
     type: collection
     path: _posts
     view:

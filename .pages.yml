@@ -14,7 +14,7 @@ content:
     - { name: valuesubtitle, label: Corporate Values Subtitle, type: string }
     - { name: valuesDesc, label: Corporate Values Description, type: string, required: true }
 content:
-  - name: ourBrands
+  - name: test
     label: Our Brands
     type: collection
     path: _posts

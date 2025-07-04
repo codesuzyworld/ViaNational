@@ -6,14 +6,18 @@ import { usePathname } from 'next/navigation'
 export function LanguageSwitcher() {
   const pathname = usePathname()
   const isFrench = pathname.startsWith('/fr')
+  const isEnglish = pathname.startsWith('/en')
   
   const getOtherLanguagePath = () => {
     if (isFrench) {
-      // Remove /fr prefix to get English path
-      return pathname.replace('/fr', '') || '/'
+      // Switch from French to English
+      return pathname.replace('/fr', '/en')
+    } else if (isEnglish) {
+      // Switch from English to French
+      return pathname.replace('/en', '/fr')
     } else {
-      // Add /fr prefix to get French path
-      return `/fr${pathname}`
+      // If no language prefix, default to English
+      return `/en${pathname}`
     }
   }
 

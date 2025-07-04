@@ -2,7 +2,7 @@ content:
   - name: homepage
     label: Home Page
     type: file
-    path: _homepage.yml        # or .md/.json depending on your format
+    path: _homepage        # or .md/.json depending on your format
     fields:
       - { name: maintitle, label: Main Title, type: string, required: true }
       - { name: mainsubtitle, label: Main Subtitle, type: string, required: true }

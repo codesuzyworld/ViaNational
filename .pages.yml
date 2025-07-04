@@ -17,7 +17,7 @@ content:
       - { name: aboutDesc, label: About Description, type: string }
       - { name: valueTitle, label: Corporate Values Title, type: string, required: true }
       - { name: valueSubtitle, label: Corporate Values Subtitle, type: string }
-      - { name: valuesDesc, label: Corporate Values Description, type: string, required: true }
+      - { name: valueDesc, label: Corporate Values Description, type: string, required: true }
 
   - name: homepage-fr
     label: Home Page (French)
@@ -32,7 +32,7 @@ content:
       - { name: aboutDesc, label: About Description, type: string }
       - { name: valueTitle, label: Corporate Values Title, type: string, required: true }
       - { name: valueSubtitle, label: Corporate Values Subtitle, type: string }
-      - { name: valuesDesc, label: Corporate Values Description, type: string, required: true }
+      - { name: valueDesc, label: Corporate Values Description, type: string, required: true }
 
   - name: posts-en
     label: Posts (English)

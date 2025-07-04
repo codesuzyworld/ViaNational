@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function TopNav() {
   return (
@@ -7,6 +8,7 @@ export function TopNav() {
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
       </div>
+      <LanguageSwitcher />
     </nav>
   );
 }

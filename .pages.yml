@@ -18,6 +18,7 @@ media:
   input: public/assets
   output: /assets
   categories: [ "image" ]
+  
 content:
   - name: ourBrands
     label: Our Brands

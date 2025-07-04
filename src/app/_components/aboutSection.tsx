@@ -1,6 +1,10 @@
+"use client";
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 type AboutSectionProps = {
   locale?: 'en' | 'fr';
@@ -21,6 +25,8 @@ export default function AboutSection({
   valueSubtitle = "What We Believe",
   valueDesc = "Default description"
 }: AboutSectionProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       {/* Section About */}

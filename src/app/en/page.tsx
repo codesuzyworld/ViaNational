@@ -44,7 +44,7 @@ export default function Index() {
             valueDesc={data.valueDesc}
           />
         </div>
-        <div id="aboutsection" className="snap w-full h-screen">
+        {/* <div id="aboutsection" className="snap w-full h-screen">
           <AboutSection 
             locale="en" 
             aboutTitle={data.aboutTitle}
@@ -54,7 +54,7 @@ export default function Index() {
             valueSubtitle={data.valueSubtitle}
             valueDesc={data.valueDesc}
           />
-        </div>
+        </div> */}
       </GSAPWrapper>
     </>
   );

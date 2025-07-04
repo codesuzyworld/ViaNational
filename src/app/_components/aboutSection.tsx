@@ -22,7 +22,7 @@ export default function AboutSection({
         className="relative w-full h-screen z-10 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url(/img/aboutBackground.png)" }}
       >
-        <div className="w-full h-full flex flex-row items-center justify-center p-5 md:p-10 bg-black/40">
+        <div className="w-full h-full flex flex-col gap-5 md:gap-2 md:flex-row items-center justify-center p-5 md:p-10 bg-black/40">
           <div className="w-1/2 flex flex-col gap-2">
             <h1 className="text-4xl md:text-6xl font-bold text-viaOffWhite">
               {aboutTitle}

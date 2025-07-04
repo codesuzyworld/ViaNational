@@ -44,11 +44,12 @@ export default function GSAPWrapper({ children }: GSAPWrapperProps) {
         paused: true
       });
 
-      // Create ScrollTrigger
+      // Create ScrollTrigger with pinSpacing: false to prevent pin-spacer gap
       ScrollTrigger.create({
         trigger: "#smooth-content",
         start: "top top",
         pin: "#smooth-content",
+        pinSpacing: false,
         onUpdate: (self) => {
           scrub.vars.totalTime = snap(
             (iteration + self.progress) * animation.duration()

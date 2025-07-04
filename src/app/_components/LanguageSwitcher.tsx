@@ -25,7 +25,7 @@ export function LanguageSwitcher() {
     <div className="flex items-center gap-2">
       <Link
         href={getOtherLanguagePath()}
-        className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+        className="px-3 py-1 text-sm border border-viaOffWhite text-viaOffWhite rounded hover:bg-viaOffWhite hover:text-viaDarkGreen transition-colors"
       >
         {isFrench ? 'EN' : 'FR'}
       </Link>

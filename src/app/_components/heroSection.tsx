@@ -14,10 +14,26 @@ export default async function HeroSection({ locale = 'en' }: HeroSectionProps) {
   const data = yaml.load(fileContents) as Record<string, any>;
   
   return (
-    <main className="p-10">
-      <h1 className="text-4xl font-bold">{data.maintitle || 'No Title Found'}</h1>
-      <p className="text-xl mt-4">{data.mainsubtitle}</p>
-      <p className="text-lg mt-2">{data.tagline}</p>
-    </main>
+    <main className="flex flex-col justify-center w-full md:p-10  text-viaOffWhite">
+      <p className="text-2xl md:text-4xl mt-4 mb-2 w-full">{data.mainsubtitle}</p>
+        <div className="flex flex-col justify-between md:flex-row md:items-end gap-4 w-full">
+
+        {/* <h1 className="text-6xl md:text-9xl font-bold mb-0 pb-0 w-full">{data.maintitle || 'No Title Found'}</h1> */}
+          
+        {/* Logo. It has a padding of 2 top and bottom for easier alignment */}
+          <div className="py-2">
+            <img src="/svg/ViaNationalLogo.svg" className="w-[500px] h-auto"/>
+          </div>
+
+        {/* This tagline splits itself into two lines on desktop and is one line on mobile */}
+          <div className="text-xl md:text-4xl text-left mb-0 pb-0 leading-none">
+            <span className="md:hidden">{data.tagline}</span>
+            <span className="hidden md:block">
+              <div>{data.tagline.split(' ').slice(0, 3).join(' ')}</div>
+              <div>{data.tagline.split(' ').slice(3).join(' ')}</div>
+            </span>
+          </div>
+        </div>
+      </main>
   );
 }

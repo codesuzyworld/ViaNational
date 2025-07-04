@@ -17,8 +17,8 @@ export default function FrenchIndex() {
       <Container>
         <TopNav />
         <HeroSection locale="fr" />
-        <Intro />
-        <HeroPost
+
+        {/* <HeroPost
           title={heroPost.title}
           coverImage={heroPost.coverImage}
           date={heroPost.date}
@@ -26,7 +26,7 @@ export default function FrenchIndex() {
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
         />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
       </Container>
     </main>
   );

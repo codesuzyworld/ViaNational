@@ -16,7 +16,7 @@ export default async function HeroSection({ locale = 'en' }: HeroSectionProps) {
   return (
     <main className="flex flex-col justify-center w-full h-full text-viaOffWhite">
       {/* Text and Title */}
-      <div className="md:p-10">
+      <div className="p-5 md:p-10 ">
         <p className="text-2xl md:text-4xl mt-4 mb-2 w-full">{data.mainsubtitle}</p>
           <div className="flex flex-col justify-between md:flex-row md:items-end gap-4 mb-5 w-full">
 
@@ -38,8 +38,8 @@ export default async function HeroSection({ locale = 'en' }: HeroSectionProps) {
           </div>        
       </div>
 
-        {/* Video */}
-        <div className="w-full flex-1 flex overflow-hidden">
+        {/* Section Video transition to text */}
+        <div className="w-full h-screen">
           <video 
             className="w-full h-full object-cover" 
             style={{ maxHeight: '100%' }}

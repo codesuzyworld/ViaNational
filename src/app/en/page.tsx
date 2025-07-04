@@ -14,9 +14,12 @@ export default function Index() {
 
   return (
     <main>
-      <Container>
+      <div className="w-full h-screen flex flex-col">
         <TopNav />
-        <HeroSection locale="en" />
+        <div className="w-full flex-1">
+          <HeroSection locale="en"/>          
+        </div>
+      </div>
 
         {/* <HeroPost
           title={heroPost.title}
@@ -27,6 +30,7 @@ export default function Index() {
           excerpt={heroPost.excerpt}
         />
         {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+      <Container>
       </Container>
     </main>
   );

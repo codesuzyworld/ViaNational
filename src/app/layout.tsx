@@ -55,7 +55,6 @@ export default function RootLayout({
       </head>
       <body className="bg-viaDarkGreen" style={{ fontFamily: 'Proxima Nova, sans-serif' }}>
         <div className="min-h-screen bg-viaDarkGreen">{children}</div>
-        <Footer />
       </body>
     </html>
   );

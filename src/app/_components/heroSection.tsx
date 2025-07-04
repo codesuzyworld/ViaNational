@@ -47,7 +47,7 @@ export default async function HeroSection({ locale = 'en' }: HeroSectionProps) {
             loop
             muted
             preload="none"
-            controls={false}
+            playsInline
           >
             <source src="/video/heroVideo.m4v" type="video/mp4" />
             Your browser does not support the video tag.

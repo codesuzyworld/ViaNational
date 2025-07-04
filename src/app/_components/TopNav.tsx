@@ -18,8 +18,8 @@ export function TopNav() {
       </div>
       <div className="flex flex-row justify-end items-end gap-4 text-viaOffWhite">
         <div className="flex flex-row gap-4 invisible md:visible">
-          <Link href={`/${currentLang}`}>ABOUT</Link>
-          <Link href={`/${currentLang}`}>OUR BRANDS</Link>          
+          <Link href={`/${currentLang}`}>{currentLang === 'fr' ? 'À PROPOS' : 'ABOUT'}</Link>
+          <Link href={`/${currentLang}`}>{currentLang === 'fr' ? 'NOS MARQUES' : 'OUR BRANDS'}</Link>          
         </div>
 
         <LanguageSwitcher />

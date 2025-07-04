@@ -5,29 +5,43 @@ import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "../../lib/api";
 import { TopNav } from "@/app/_components/TopNav";
 import HeroSection from "@/app/_components/heroSection";
+import AboutSection from "@/app/_components/aboutSection";
+import GSAPWrapper from "@/app/_components/GSAPWrapper";
+import fs from 'fs';
+import path from 'path';
+import yaml from 'js-yaml';
 
-export default function FrenchIndex() {
+
+export default function Index() {
   const allPosts = getAllPosts();
+  
+  // Read the YAML data
+  const fileName = '_homepage.yml';
+  const filePath = path.join(process.cwd(), fileName);
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const data = yaml.load(fileContents) as Record<string, any>;
 
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
 
   return (
-    <main>
-      <Container>
+    <>
+      <nav id="topnav" className="fixed top-0 z-50 bg-viaDarkGreen w-full">
         <TopNav />
-        <HeroSection locale="fr" />
-
-        {/* <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
-      </Container>
-    </main>
+      </nav>
+      <GSAPWrapper>
+        <div id="herosection" className="w-full h-screen">
+          <HeroSection locale="fr" />
+        </div>
+        <div id="aboutsection" className="w-full h-screen">
+          <AboutSection 
+            locale="fr" 
+            aboutTitle={data.aboutTitle}
+            aboutSubtitle={data.aboutSubtitle}
+            aboutDesc={data.aboutDesc}
+          />
+        </div>
+      </GSAPWrapper>
+    </>
   );
 }

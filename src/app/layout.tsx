@@ -53,8 +53,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className="bg-viaDarkGreen" style={{ fontFamily: 'Proxima Nova, sans-serif' }}>
-        <div className="min-h-screen bg-viaDarkGreen">{children}</div>
+      <body style={{ fontFamily: 'Proxima Nova, sans-serif' }}>
+        <div className="min-h-screen">{children}</div>
       </body>
     </html>
   );

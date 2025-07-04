@@ -39,6 +39,20 @@ export default function Index() {
             aboutTitle={data.aboutTitle}
             aboutSubtitle={data.aboutSubtitle}
             aboutDesc={data.aboutDesc}
+            valueTitle={data.valueTitle}
+            valueSubtitle={data.valueSubtitle}
+            valueDesc={data.valueDesc}
+          />
+        </div>
+        <div id="aboutsection" className="snap w-full h-screen">
+          <AboutSection 
+            locale="en" 
+            aboutTitle={data.aboutTitle}
+            aboutSubtitle={data.aboutSubtitle}
+            aboutDesc={data.aboutDesc}
+            valueTitle={data.valueTitle}
+            valueSubtitle={data.valueSubtitle}
+            valueDesc={data.valueDesc}
           />
         </div>
       </GSAPWrapper>

@@ -7,6 +7,7 @@ import { TopNav } from "@/app/_components/TopNav";
 import HeroSection from "@/app/_components/heroSection";
 import AboutSection from "@/app/_components/aboutSection";
 import GSAPWrapper from "@/app/_components/GSAPWrapper";
+import ValueSection from "@/app/_components/valueSection";
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
@@ -39,22 +40,16 @@ export default function Index() {
             aboutTitle={data.aboutTitle}
             aboutSubtitle={data.aboutSubtitle}
             aboutDesc={data.aboutDesc}
+          />
+        </div>
+        <div id="valueSection" className="snap w-full h-screen">
+          <ValueSection 
+            locale="en" 
             valueTitle={data.valueTitle}
             valueSubtitle={data.valueSubtitle}
             valueDesc={data.valueDesc}
           />
         </div>
-        {/* <div id="aboutsection" className="snap w-full h-screen">
-          <AboutSection 
-            locale="en" 
-            aboutTitle={data.aboutTitle}
-            aboutSubtitle={data.aboutSubtitle}
-            aboutDesc={data.aboutDesc}
-            valueTitle={data.valueTitle}
-            valueSubtitle={data.valueSubtitle}
-            valueDesc={data.valueDesc}
-          />
-        </div> */}
       </GSAPWrapper>
     </>
   );

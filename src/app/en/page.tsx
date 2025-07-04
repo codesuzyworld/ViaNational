@@ -30,10 +30,10 @@ export default function Index() {
         <TopNav />
       </nav>
       <GSAPWrapper>
-        <div id="herosection" className="w-full h-screen">
+        <div id="herosection" className="snap w-full h-screen">
           <HeroSection locale="en" />
         </div>
-        <div id="aboutsection" className="w-full h-screen">
+        <div id="aboutsection" className="snap w-full h-screen">
           <AboutSection 
             locale="en" 
             aboutTitle={data.aboutTitle}

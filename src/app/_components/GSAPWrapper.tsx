@@ -15,22 +15,52 @@ export default function GSAPWrapper({ children }: GSAPWrapperProps) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       // Only run on client
-      gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-      
-          smootherRef.current = ScrollSmoother.create({
-          smooth: 0.2,
-          effects: true,
-          smoothTouch: 0.3,
-          ignoreMobileResize: true
+      gsap.registerPlugin(ScrollTrigger);
+
+      let iteration = 0;
+      const time = 0.7; // Lower = faster scrolling
+      const sections = gsap.utils.toArray(".snap");
+      const totalDuration = sections.length;
+      const spacing = 1;
+      const snap = gsap.utils.snap(spacing);
+
+      // Create timeline animation
+      const animation = gsap
+        .timeline({
+          paused: true,
+          defaults: { ease: "none" }
+        })
+        .to("#smooth-content", {
+          yPercent: -100,
+          duration: totalDuration,
+          immediateRender: false
         });
 
-      // Remove all ScrollTrigger for now to isolate the issue
+      // Create scrub animation
+      const scrub = gsap.to(animation, {
+        totalTime: 0,
+        duration: time,
+        ease: "power2",
+        paused: true
+      });
+
+      // Create ScrollTrigger
+      ScrollTrigger.create({
+        trigger: "#smooth-content",
+        start: "top top",
+        pin: "#smooth-content",
+        onUpdate: (self) => {
+          scrub.vars.totalTime = snap(
+            (iteration + self.progress) * animation.duration()
+          );
+          scrub.invalidate().restart();
+        }
+      });
     }
 
     return () => {
-      if (smootherRef.current) {
-        smootherRef.current.kill();
-      }
+      // Clean up ScrollTrigger
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 

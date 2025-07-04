@@ -5,12 +5,14 @@ import { usePathname } from 'next/navigation'
 
 export function LanguageSwitcher() {
   const pathname = usePathname()
-  const isFrench = pathname.includes('/fr')
+  const isFrench = pathname.startsWith('/fr')
   
-  const toggleLanguage = () => {
+  const getOtherLanguagePath = () => {
     if (isFrench) {
-      return pathname.replace('/fr', '')
+      // Remove /fr prefix to get English path
+      return pathname.replace('/fr', '') || '/'
     } else {
+      // Add /fr prefix to get French path
       return `/fr${pathname}`
     }
   }
@@ -18,7 +20,7 @@ export function LanguageSwitcher() {
   return (
     <div className="flex items-center gap-2">
       <Link
-        href={toggleLanguage()}
+        href={getOtherLanguagePath()}
         className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
       >
         {isFrench ? 'EN' : 'FR'}

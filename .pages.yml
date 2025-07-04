@@ -1,8 +1,13 @@
+media:
+  input: public/assets
+  output: /assets
+  categories: [ "image" ]
+
 content:
   - name: homepage
     label: Home Page
     type: file
-    path: _homepage.yml        # or .md/.json depending on your format
+    path: _homepage.yml
     fields:
       - { name: maintitle, label: Main Title, type: string, required: true }
       - { name: mainsubtitle, label: Main Subtitle, type: string, required: true }
@@ -14,12 +19,6 @@ content:
       - { name: valueSubtitle, label: Corporate Values Subtitle, type: string }
       - { name: valuesDesc, label: Corporate Values Description, type: string, required: true }
 
-media:
-  input: public/assets
-  output: /assets
-  categories: [ "image" ]
-  
-content:
   - name: ourBrands
     label: Our Brands
     type: collection

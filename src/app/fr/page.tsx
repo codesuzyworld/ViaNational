@@ -17,7 +17,7 @@ export default function Index() {
   const allPosts = getAllPosts();
   
   // Read the YAML data
-  const fileName = '_homepage.yml';
+  const fileName = '_homepage-fr.yml';
   const filePath = path.join(process.cwd(), fileName);
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const data = yaml.load(fileContents) as Record<string, any>;

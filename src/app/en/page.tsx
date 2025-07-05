@@ -30,7 +30,6 @@ export default function Index() {
       <nav id="topnav" className="fixed top-0 z-50 bg-viaDarkGreen w-full">
         <TopNav />
       </nav>
-      <GSAPWrapper>
         <div id="herosection" className="snap w-full h-screen">
           <HeroSection locale="en" />
         </div>
@@ -50,7 +49,6 @@ export default function Index() {
             valueDesc={data.valueDesc}
           />
         </div>
-      </GSAPWrapper>
     </>
   );
 }
